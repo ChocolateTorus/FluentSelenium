@@ -1,0 +1,16 @@
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentTests.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentTests.pdb
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentAssertions.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\nunit.framework.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\WebDriver.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentAssertions.pdb
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentAssertions.xml
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\nunit.framework.xml
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\WebDriver.xml
+C:\Projects\FluentSelenium\FluentTests\obj\Debug\FluentTests.csprojResolveAssemblyReference.cache
+C:\Projects\FluentSelenium\FluentTests\obj\Debug\FluentTests.dll
+C:\Projects\FluentSelenium\FluentTests\obj\Debug\FluentTests.pdb
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentSelenium.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\FluentSelenium.pdb
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\Moq.dll
+C:\Projects\FluentSelenium\FluentTests\bin\Debug\Moq.xml
