@@ -22,13 +22,7 @@ namespace FluentTests.Integration
                 I.OpenPage(google);
                 I.EnterText("cats").Into("input[name=\"q\"]");
                 I.Click().On("input[name=\"btnK\"]");
-
-                I.Driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 0, 5));
-
-                I.Driver.FindElements(By.CssSelector("em"))
-                    .FirstOrDefault(el => el.Text.Contains("Cat"))
-                    .Should()
-                    .NotBeNull();
+                I.Expect().ValueOf("input").ToBe(4);
             }
         }
 

@@ -10,6 +10,7 @@ namespace FluentSelenium
             Driver = browserDriver;
         }
 
+        [Obsolete("This is an escape hatch that should not be depended on.")]
         internal IWebDriver Driver { get; set; }
 
         public void Dispose()
