@@ -1,10 +1,7 @@
-﻿using System;
-using FluentAssertions;
-using FluentSelenium;
+﻿using FluentSelenium;
 using Moq;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 
 namespace FluentTests
 {
@@ -87,8 +84,6 @@ namespace FluentTests
             webElement.Verify();
         }
 
-        [Test]
-
-
+        
     }
 }

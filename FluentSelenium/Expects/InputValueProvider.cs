@@ -2,27 +2,19 @@
 using FluentSelenium.Actions;
 using FluentSelenium.Expects.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 
 namespace FluentSelenium.Expects
 {
-    public class InputValueProvider : IElementValueProvider
+    public class InputValueProvider : WaitableElementProvider, IElementValueProvider
     {
-        private readonly WebDriverWait driver;
-        private readonly FluentSelector selector;
-
-
         public InputValueProvider(FluentSelector selector, IWebDriver driver)
-        {
-            this.selector = selector;
-            this.driver = new WebDriverWait(driver, new TimeSpan(0));
-        }
+            : base(selector, driver)
+        { }
 
         public void ToBe(string value)
         {
-            IWebElement element = driver.Until(d => d.FindElement(selector.Criteria));
-            string elementValue = element.GetAttribute("value");
+            string elementValue = GetWebElement().GetAttribute("value");
 
             if (elementValue != value)
             {
@@ -37,7 +29,8 @@ namespace FluentSelenium.Expects
 
         public IElementValueProvider WithIn(int milliseconds)
         {
-            driver.Timeout = new TimeSpan(0, 0, 0, 0, milliseconds);
+            base.WithIn(milliseconds);
+
             return this;
         }
     }
