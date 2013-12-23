@@ -4,8 +4,8 @@ namespace FluentSelenium
 {
     public class EnterTextProvider : IEnterTextProvider
     {
-        private readonly string text;
         private readonly IWebDriver driver;
+        private readonly string text;
 
         internal EnterTextProvider(string text, IWebDriver driver)
         {

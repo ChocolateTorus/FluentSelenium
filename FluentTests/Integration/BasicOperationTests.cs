@@ -17,7 +17,6 @@ namespace FluentTests.Integration
         [Test]
         public void ShouldGoToPageEnterTextAndClickButton()
         {
-
             using (var I = new FluentDriver(new FirefoxDriver(null, new FirefoxProfile { EnableNativeEvents = false })))
             {
                 I.OpenPage(google);
@@ -25,13 +24,12 @@ namespace FluentTests.Integration
                 I.Click().On("input[name=\"btnK\"]");
 
                 I.Driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 0, 5));
+
                 I.Driver.FindElements(By.CssSelector("em"))
                     .FirstOrDefault(el => el.Text.Contains("Cat"))
                     .Should()
                     .NotBeNull();
             }
-
-
         }
 
 

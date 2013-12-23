@@ -46,9 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClickProvider.cs" />
     <Compile Include="EnterTextProvider.cs" />
+    <Compile Include="ExpectProvider.cs" />
     <Compile Include="FluentDriver.cs" />
+    <Compile Include="IClickProvider.cs" />
+    <Compile Include="IElementValueProvider.cs" />
     <Compile Include="IEnterTextProvider.cs" />
+    <Compile Include="IExpectProvider.cs" />
+    <Compile Include="InputValueProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

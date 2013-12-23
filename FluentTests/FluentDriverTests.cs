@@ -69,5 +69,23 @@ namespace FluentTests
             webElement.Verify();
         }
 
+        [Test]
+        public void ShouldBeAbleToReadValueOfTextInput()
+        {
+            var driver = new Mock<IWebDriver>();
+            var webElement = new Mock<IWebElement>();
+
+            webElement.Setup(e => e.GetAttribute("value")).Returns("foo").Verifiable();
+            driver.Setup(d => d.FindElement(It.IsAny<By>())).Returns(webElement.Object).Verifiable();
+
+            using (var I = new FluentDriver(driver.Object))
+            {
+                I.Expect().ValueOf("input").ToBe("foo");
+            }
+
+            driver.Verify();
+            webElement.Verify();
+        }
+
     }
 }
