@@ -38,23 +38,14 @@ namespace FluentSelenium
         }
     }
 
-    public interface IClickProvider
+    public interface IElementValueProvider
     {
-        void On(string selector);
+        void ToBe(string value);
+        void ToBe(int value);
+
     }
 
-    public class ClickProvider : IClickProvider
+    public class InputValueProvider : IElementValueProvider
     {
-        private readonly IWebDriver driver;
-
-        public ClickProvider(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
-
-        public void On(string selector)
-        {
-            driver.FindElement(By.CssSelector(selector)).Click();
-        }
     }
 }
