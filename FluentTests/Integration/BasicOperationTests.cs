@@ -26,6 +26,12 @@ namespace FluentTests.Integration
             }
         }
 
+        [Test]
+        public void ShouldGoToPageEnterTextClickButtonAndWaitForElementsToAppear()
+        {
+            
+        }
+
 
     }
 }

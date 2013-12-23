@@ -4,5 +4,6 @@
     {
         void ToBe(string value);
         void ToBe(int value);
+        IElementValueProvider WithIn(int milliseconds);
     }
 }
