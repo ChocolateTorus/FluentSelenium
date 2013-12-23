@@ -22,7 +22,6 @@ namespace FluentTests.Integration
                 I.OpenPage(google);
                 I.EnterText("cats").Into("input[name=\"q\"]");
                 I.Click().On("input[name=\"btnK\"]");
-                I.Expect().ValueOf("input").ToBe(4);
             }
         }
 
