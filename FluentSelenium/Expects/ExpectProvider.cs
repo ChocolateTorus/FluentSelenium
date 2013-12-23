@@ -22,5 +22,32 @@ namespace FluentSelenium.Expects
         {
             return new VisibilityProvider(selector, driver);
         }
+
+        public ICountProvider TheNumberOf(FluentSelector selector)
+        {
+            return new CountProvider(selector, driver);
+        }
+    }
+
+    public interface ICountProvider
+    {
+        void ToBe(int count);
+    }
+
+    public class CountProvider : ICountProvider
+    {
+        private readonly IWebDriver driver;
+        private readonly FluentSelector selector;
+
+        internal CountProvider(FluentSelector selector, IWebDriver driver)
+        {
+            this.driver = driver;
+            this.selector = selector;
+        }
+
+        public void ToBe(int count)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
