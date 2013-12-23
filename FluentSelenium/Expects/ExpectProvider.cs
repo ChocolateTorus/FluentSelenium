@@ -17,5 +17,10 @@ namespace FluentSelenium.Expects
         {
             return new InputValueProvider(selector, driver);
         }
+
+        public IVisibilityProvider ToSee(FluentSelector selector)
+        {
+            return new VisibilityProvider(selector, driver);
+        }
     }
 }

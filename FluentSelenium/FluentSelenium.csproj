@@ -52,6 +52,8 @@
     <Compile Include="Actions\ClickProvider.cs" />
     <Compile Include="Actions\EnterTextProvider.cs" />
     <Compile Include="Expects\ExpectProvider.cs" />
+    <Compile Include="Expects\Interfaces\IVisibilityProvider.cs" />
+    <Compile Include="Expects\VisibilityProvider.cs" />
     <Compile Include="Expects\WaitableElementProvider.cs" />
     <Compile Include="FluentDriver.cs" />
     <Compile Include="Actions\Interfaces\IClickProvider.cs" />
