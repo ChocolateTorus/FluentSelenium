@@ -11,7 +11,7 @@ namespace FluentSelenium
             this.driver = driver;
         }
 
-        public IElementValueProvider ValueOf(string selector)
+        public IElementValueProvider ValueOf(FluentSelector selector)
         {
             return new InputValueProvider(selector, driver);
         }

@@ -13,9 +13,9 @@ namespace FluentSelenium
             this.driver = driver;
         }
 
-        public void Into(string selector)
+        public void Into(FluentSelector selector)
         {
-            driver.FindElement(By.CssSelector(selector)).SendKeys(text);
+            driver.FindElement(selector.Criteria).SendKeys(text);
         }
     }
 }

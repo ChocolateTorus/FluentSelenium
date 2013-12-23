@@ -6,9 +6,9 @@ namespace FluentSelenium
     public class InputValueProvider : IElementValueProvider
     {
         private readonly IWebDriver driver;
-        private readonly string selector;
+        private readonly FluentSelector selector;
 
-        public InputValueProvider(string selector, IWebDriver driver)
+        public InputValueProvider(FluentSelector selector, IWebDriver driver)
         {
             this.selector = selector;
             this.driver = driver;
@@ -16,7 +16,7 @@ namespace FluentSelenium
 
         public void ToBe(string value)
         {
-            IWebElement element = driver.FindElement(By.CssSelector(selector));
+            IWebElement element = driver.FindElement(selector.Criteria);
             string elementValue = element.GetAttribute("value");
 
             if (elementValue != value)

@@ -2,6 +2,6 @@
 {
     public interface IExpectProvider
     {
-        IElementValueProvider ValueOf(string selector);
+        IElementValueProvider ValueOf(FluentSelector selector);
     }
 }

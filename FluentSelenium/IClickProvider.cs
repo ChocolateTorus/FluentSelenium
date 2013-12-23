@@ -1,7 +1,9 @@
-﻿namespace FluentSelenium
+﻿using OpenQA.Selenium;
+
+namespace FluentSelenium
 {
     public interface IClickProvider
     {
-        void On(string selector);
+        void On(FluentSelector selector);
     }
 }

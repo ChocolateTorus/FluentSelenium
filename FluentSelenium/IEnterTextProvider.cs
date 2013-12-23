@@ -2,6 +2,6 @@
 {
     public interface IEnterTextProvider
     {
-        void Into(string selector);
+        void Into(FluentSelector selector);
     }
 }
