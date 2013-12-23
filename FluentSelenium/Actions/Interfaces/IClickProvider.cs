@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace FluentSelenium
+﻿namespace FluentSelenium.Actions.Interfaces
 {
     public interface IClickProvider
     {

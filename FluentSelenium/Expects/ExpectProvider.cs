@@ -1,6 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using FluentSelenium.Actions;
+using FluentSelenium.Expects.Interfaces;
+using OpenQA.Selenium;
 
-namespace FluentSelenium
+namespace FluentSelenium.Expects
 {
     public class ExpectProvider : IExpectProvider
     {

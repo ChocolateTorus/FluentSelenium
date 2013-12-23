@@ -1,4 +1,4 @@
-﻿namespace FluentSelenium
+﻿namespace FluentSelenium.Expects.Interfaces
 {
     public interface IElementValueProvider
     {

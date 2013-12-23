@@ -1,4 +1,4 @@
-﻿namespace FluentSelenium
+﻿namespace FluentSelenium.Actions.Interfaces
 {
     public interface IEnterTextProvider
     {

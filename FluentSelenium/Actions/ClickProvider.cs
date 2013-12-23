@@ -1,7 +1,7 @@
-﻿using System.Net.NetworkInformation;
+﻿using FluentSelenium.Actions.Interfaces;
 using OpenQA.Selenium;
 
-namespace FluentSelenium
+namespace FluentSelenium.Actions
 {
     public class ClickProvider : IClickProvider
     {

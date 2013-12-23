@@ -46,15 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClickProvider.cs" />
-    <Compile Include="EnterTextProvider.cs" />
-    <Compile Include="ExpectProvider.cs" />
+    <Compile Include="Actions\ClickProvider.cs" />
+    <Compile Include="Actions\EnterTextProvider.cs" />
+    <Compile Include="Expects\ExpectProvider.cs" />
     <Compile Include="FluentDriver.cs" />
-    <Compile Include="IClickProvider.cs" />
-    <Compile Include="IElementValueProvider.cs" />
-    <Compile Include="IEnterTextProvider.cs" />
-    <Compile Include="IExpectProvider.cs" />
-    <Compile Include="InputValueProvider.cs" />
+    <Compile Include="Actions\Interfaces\IClickProvider.cs" />
+    <Compile Include="Expects\Interfaces\IElementValueProvider.cs" />
+    <Compile Include="Actions\Interfaces\IEnterTextProvider.cs" />
+    <Compile Include="Expects\Interfaces\IExpectProvider.cs" />
+    <Compile Include="Expects\InputValueProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

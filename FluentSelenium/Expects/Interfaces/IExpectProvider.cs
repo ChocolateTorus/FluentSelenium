@@ -1,4 +1,6 @@
-﻿namespace FluentSelenium
+﻿using FluentSelenium.Actions;
+
+namespace FluentSelenium.Expects.Interfaces
 {
     public interface IExpectProvider
     {

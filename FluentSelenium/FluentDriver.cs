@@ -1,4 +1,8 @@
 ﻿using System;
+using FluentSelenium.Actions;
+using FluentSelenium.Actions.Interfaces;
+using FluentSelenium.Expects;
+using FluentSelenium.Expects.Interfaces;
 using OpenQA.Selenium;
 
 namespace FluentSelenium

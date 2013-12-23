@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using FluentSelenium.Actions.Interfaces;
+using OpenQA.Selenium;
 
-namespace FluentSelenium
+namespace FluentSelenium.Actions
 {
     public class EnterTextProvider : IEnterTextProvider
     {
