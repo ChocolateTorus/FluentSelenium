@@ -2,6 +2,6 @@
 {
     public interface ICountProvider
     {
-        void ToBe(int count);
+        void ToBe(int expectedCount);
     }
 }

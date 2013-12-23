@@ -6,5 +6,6 @@ namespace FluentSelenium.Expects.Interfaces
     {
         IElementValueProvider ValueOf(FluentSelector selector);
         IVisibilityProvider ToSee(FluentSelector selector);
+        ICountProvider TheNumberOf(FluentSelector selector);
     }
 }

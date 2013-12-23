@@ -54,7 +54,7 @@
     <Compile Include="Actions\FluentSelector.cs" />
     <Compile Include="Expects\CountProvider.cs" />
     <Compile Include="Expects\ExpectProvider.cs" />
-    <Compile Include="Expects\ICountProvider.cs" />
+    <Compile Include="Expects\Interfaces\ICountProvider.cs" />
     <Compile Include="Expects\Interfaces\IVisibilityProvider.cs" />
     <Compile Include="Expects\VisibilityProvider.cs" />
     <Compile Include="Expects\WaitableElementProvider.cs" />

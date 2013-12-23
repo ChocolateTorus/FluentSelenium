@@ -9,8 +9,6 @@ namespace FluentTests
     public class FluentDriverTests
     {
 
-
-        private const string google = "http://www.google.com";
         [Test]
         public void ShouldGoToPage()
         {
@@ -18,11 +16,11 @@ namespace FluentTests
             var navigation = new Mock<INavigation>();
 
             driver.Setup(d => d.Navigate()).Returns(navigation.Object);
-            navigation.Setup(n => n.GoToUrl(google)).Verifiable();
+            navigation.Setup(n => n.GoToUrl(It.IsAny<string>())).Verifiable();
 
             using (var I = new FluentDriver(driver.Object))
             {
-                I.OpenPage(google);
+                I.OpenPage("http://www.google.com");
             }
 
             navigation.Verify();

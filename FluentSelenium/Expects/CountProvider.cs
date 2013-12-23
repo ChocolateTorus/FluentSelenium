@@ -1,3 +1,4 @@
+using System;
 using FluentSelenium.Actions;
 using OpenQA.Selenium;
 
@@ -14,9 +15,11 @@ namespace FluentSelenium.Expects
             this.selector = selector;
         }
 
-        public void ToBe(int count)
+        public void ToBe(int expectedCount)
         {
-            throw new System.NotImplementedException();
+            var actualCount = driver.FindElements(selector.Criteria).Count;
+
+            if (actualCount != expectedCount) throw new Exception(string.Format("Expect {0} elements but found {1}", expectedCount, actualCount));
         }
     }
 }

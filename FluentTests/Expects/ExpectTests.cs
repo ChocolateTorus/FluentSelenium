@@ -1,7 +1,10 @@
-﻿using FluentSelenium;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using FluentSelenium;
 using Moq;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 
 namespace FluentTests.Expects
 {
@@ -53,6 +56,27 @@ namespace FluentTests.Expects
             using (var I = new FluentDriver(driver.Object))
             {
                 I.Expect().ToSee("#id").WithIn(1000);
+            }
+        }
+
+        [Test]
+        public void ShouldExpect4Items()
+        {
+            var driver = new Mock<IWebDriver>();
+            var elementsList = new List<IWebElement>
+            {
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@")
+            };
+
+            var foundElements = new ReadOnlyCollection<IWebElement>(elementsList);
+            driver.Setup(el => el.FindElements(It.IsAny<By>())).Returns(foundElements);
+
+            using (var I = new FluentDriver(driver.Object))
+            {
+                I.Expect().TheNumberOf("ds").ToBe(4);
             }
         }
     }
