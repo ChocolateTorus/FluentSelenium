@@ -1,9 +1,0 @@
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\FluentSelenium.dll
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\FluentSelenium.pdb
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\nunit.framework.dll
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\WebDriver.dll
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\nunit.framework.xml
-C:\Projects\FluentSelenium\FluentSelenium\bin\Debug\WebDriver.xml
-C:\Projects\FluentSelenium\FluentSelenium\obj\Debug\FluentSelenium.csprojResolveAssemblyReference.cache
-C:\Projects\FluentSelenium\FluentSelenium\obj\Debug\FluentSelenium.dll
-C:\Projects\FluentSelenium\FluentSelenium\obj\Debug\FluentSelenium.pdb
