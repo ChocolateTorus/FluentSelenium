@@ -56,7 +56,8 @@
     <Compile Include="Expects\ExpectProvider.cs" />
     <Compile Include="Expects\Interfaces\ICountProvider.cs" />
     <Compile Include="Expects\Interfaces\IVisibilityProvider.cs" />
-    <Compile Include="Expects\INumericComparer.cs" />
+    <Compile Include="Expects\Interfaces\INumericComparer.cs" />
+    <Compile Include="Expects\Interfaces\IWaitableCountProvider.cs" />
     <Compile Include="Expects\NumericComparer.cs" />
     <Compile Include="Expects\VisibilityProvider.cs" />
     <Compile Include="Expects\WaitableElementProvider.cs" />

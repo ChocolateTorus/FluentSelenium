@@ -23,7 +23,7 @@ namespace FluentSelenium.Expects
             return new VisibilityProvider(selector, driver);
         }
 
-        public ICountProvider TheNumberOf(FluentSelector selector)
+        public IWaitableCountProvider TheNumberOf(FluentSelector selector)
         {
             return new CountProvider(selector, driver);
         }

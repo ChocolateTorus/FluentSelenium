@@ -1,8 +1,12 @@
-﻿namespace FluentSelenium.Expects
+﻿namespace FluentSelenium.Expects.Interfaces
 {
     public interface ICountProvider
     {
-        void ToBe(int expectedCount);
         INumericComparer ToBe();
+    }
+
+    public interface IWaitable<T>
+    {
+        T WithIn(int milliseconds);
     }
 }

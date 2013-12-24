@@ -78,7 +78,7 @@ namespace FluentTests.Expects
 
             using (var I = new FluentDriver(driver.Object))
             {
-                I.Expect().TheNumberOf("ds").ToBe(4);
+                I.Expect().TheNumberOf("ds").ToBe().Exactly(4);
             }
         }
 
@@ -121,7 +121,7 @@ namespace FluentTests.Expects
 
             using (var I = new FluentDriver(driver.Object))
             {
-                I.Expect().TheNumberOf("ds").ToBe().LessThan(4);
+                I.Expect().TheNumberOf("ds").WithIn(0).ToBe().LessThan(3);
             }
         }
 
