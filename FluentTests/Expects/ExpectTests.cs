@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using FluentAssertions;
 using FluentSelenium;
 using Moq;
 using NUnit.Framework;
@@ -77,6 +79,72 @@ namespace FluentTests.Expects
             using (var I = new FluentDriver(driver.Object))
             {
                 I.Expect().TheNumberOf("ds").ToBe(4);
+            }
+        }
+
+        [Test]
+        public void ShouldExpectAtleast4Items()
+        {
+            var driver = new Mock<IWebDriver>();
+            var elementsList = new List<IWebElement>
+            {
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@")
+            };
+
+            var foundElements = new ReadOnlyCollection<IWebElement>(elementsList);
+            driver.Setup(el => el.FindElements(It.IsAny<By>())).Returns(foundElements);
+
+            using (var I = new FluentDriver(driver.Object))
+            {
+                I.Expect().TheNumberOf("ds").ToBe().AtLeast(4);
+            }
+        }
+
+        [Test]
+        public void ShouldExpectLessThan3Items()
+        {
+            var driver = new Mock<IWebDriver>();
+            var elementsList = new List<IWebElement>
+            {
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@")
+            };
+
+            var foundElements = new ReadOnlyCollection<IWebElement>(elementsList);
+            driver.Setup(el => el.FindElements(It.IsAny<By>())).Returns(foundElements);
+
+            using (var I = new FluentDriver(driver.Object))
+            {
+                I.Expect().TheNumberOf("ds").ToBe().LessThan(4);
+            }
+        }
+
+        [Test]
+        public void ShouldExpectLessThan3ItemsAndThrow()
+        {
+            var driver = new Mock<IWebDriver>();
+            var elementsList = new List<IWebElement>
+            {
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@"),
+                new FirefoxWebElement(null, "@")
+            };
+
+            var foundElements = new ReadOnlyCollection<IWebElement>(elementsList);
+            driver.Setup(el => el.FindElements(It.IsAny<By>())).Returns(foundElements);
+
+            using (var I = new FluentDriver(driver.Object))
+            {
+                Action act = () => { I.Expect().TheNumberOf("ds").ToBe().LessThan(4); };
+                act.ShouldThrow<Exception>();
             }
         }
     }
