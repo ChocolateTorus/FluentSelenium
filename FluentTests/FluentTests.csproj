@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Actions\ActionTests.cs" />
     <Compile Include="Expects\ExpectTests.cs" />
+    <Compile Include="Expects\InputValueProviderTests.cs" />
     <Compile Include="FluentDriverTests.cs" />
     <Compile Include="Integration\BasicOperationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

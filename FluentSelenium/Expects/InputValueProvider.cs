@@ -12,6 +12,16 @@ namespace FluentSelenium.Expects
             : base(selector, driver)
         { }
 
+        public void NotToBe(string value)
+        {
+            string elementValue = GetWebElement().GetAttribute("value");
+
+            if (elementValue == value)
+            {
+                throw new Exception(string.Format("Expected value not to be {0} but it was {1}", value, elementValue));
+            }
+        }
+        
         public void ToBe(string value)
         {
             string elementValue = GetWebElement().GetAttribute("value");
@@ -20,6 +30,11 @@ namespace FluentSelenium.Expects
             {
                 throw new Exception(string.Format("Expected value to be {0} but it was {1}", value, elementValue));
             }
+        }
+
+        public void NotToBe(int value)
+        {
+            NotToBe(value.ToString());
         }
 
         public void ToBe(int value)
