@@ -10,7 +10,7 @@ namespace FluentSelenium.Expects
         public VisibilityProvider(FluentSelector selector, IWebDriver driver)
             : base(selector, driver)
         { }
-        public void Now()
+        public void Immediately()
         {
             CheckVisibility(GetWebElement());
         }

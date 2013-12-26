@@ -2,7 +2,7 @@
 {
     public interface IVisibilityProvider
     {
-        void Now();
+        void Immediately();
         void WithIn(int milliseconds);
     }
 }

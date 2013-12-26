@@ -42,7 +42,7 @@ namespace FluentTests.Expects
 
             using (var I = new FluentDriver(driver.Object))
             {
-                I.Expect().ToSee("#id").Now();
+                I.Expect().ToSee("#id").Immediately();
             }
         }
 
