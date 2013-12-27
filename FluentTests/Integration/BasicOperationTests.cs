@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Linq;
 using FluentAssertions;
 using FluentSelenium;
-using Moq;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
 namespace FluentTests.Integration
@@ -26,13 +23,30 @@ namespace FluentTests.Integration
         }
 
         [Test]
+        public void CanVerifyValueOfTextbox()
+        {
+            using (var I = new FluentDriver(new FirefoxDriver(null, new FirefoxProfile { EnableNativeEvents = false })))
+            {
+                I.OpenPage(google);
+                I.EnterText("cats").Into("input[name=\"q\"]");
+                
+                Action toBeAction = () => I.Expect().ValueOf("input[name=\"q\"]").ToBe("cats");
+                toBeAction.ShouldNotThrow<Exception>();
+
+                Action notToBeAction = () => I.Expect().ValueOf("input[name=\"q\"]").NotToBe("dogs");
+                notToBeAction.ShouldNotThrow<Exception>();
+            }
+        }
+
+        [Test]
         public void ShouldGoToPageEnterTextClickButtonAndWaitForElementsToAppear()
         {
             using (var I = new FluentDriver(new FirefoxDriver(null, new FirefoxProfile { EnableNativeEvents = false })))
             {
                 I.OpenPage(google);
                 I.EnterText("cats").Into("input[name=\"q\"]");
-                I.Expect().ValueOf("input[name=\"q\"]").ToBe("cats");
+                Action act = () => I.Expect().ValueOf("input[name=\"q\"]").ToBe("cats");
+                act.ShouldNotThrow<Exception>();
             }
         }
 
@@ -44,7 +58,8 @@ namespace FluentTests.Integration
                 I.OpenPage(google);
                 I.EnterText("cats").Into("input[name=\"q\"]");
                 I.Click().On("input[name=\"btnK\"]");
-                I.Expect().ValueOf("#lst-ib").WithIn(2000).ToBe("cats");
+                Action act = () => I.Expect().ValueOf("#lst-ib").WithIn(2000).ToBe("cats");
+                act.ShouldNotThrow<Exception>();
             }
         }
 
